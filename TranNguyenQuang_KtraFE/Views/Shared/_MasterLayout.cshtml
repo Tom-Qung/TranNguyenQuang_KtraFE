@@ -1,0 +1,188 @@
+﻿<style>
+    .samsung{
+        float:left;
+    }
+    .logo {
+        float:left;
+    }
+
+    #searchbar{
+        float:left;
+        height:50px;
+        width:75%;
+    }
+    #header{
+       height:110px;
+       width:100%;
+
+    }
+  
+    #search-section {
+        text-align: center;
+        float:left;
+    }
+
+  #search-section h2 {
+         font-size: 20px;
+         margin-bottom: 20px;
+         text-align:center;
+         float:left;
+    }
+    #search-input{
+        width:600px;
+        padding:10px;
+        border: 1px solid #ffffff;
+        float:left;
+    }
+ 
+    #search-button {
+        padding: 10px 20px;
+        background-color: white;
+        color: #333;
+        border: none;
+        border-radius: 0 5px 5px 0;
+        cursor: pointer;
+        color:blue;
+    
+    }
+    #search-button:hover {
+    background-color: #555;
+    }
+    nav ul {
+        list-style-type:none;
+        display:flex;
+    }
+    nav ul li{
+        margin-right: 20px;
+        position:center;
+    }
+    nav ul li a {
+        text-decoration:none;
+        color:#333;
+        font-weight:bold;
+        
+    }
+    .main-menu ul{
+        list-style-type:none;
+        display:flex;
+        justify-content:center;
+    }
+    .main-menu ul li{
+        margin:0 10px;
+    }
+    .main-menu ul li a{
+        text-decoration:none;
+        color:#333;
+        font-weight: bold;
+    }
+    .div_production-area {
+        margin-top: 1vw;
+        height: 700px;
+        width: 84%;
+        float: left;
+        margin-left: 2vw;
+        margin-bottom: 5px;
+        background-color: white;
+    }
+    #addressInput {
+        width: 12vw; 
+        height: 43px; 
+        float: right;
+        border-radius: 15px;
+    }
+    #Div_UserArea2{
+        float:right;
+    }
+</style>
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html" charset="utf-8"/>
+    <title>Tiki</title>
+    <script language="Javascript">
+        function searchMap() {
+            const defaultAddress = "Phường Bến Nghé, Quận 1, Hồ Chí Minh";
+            var address = document.getElementById('addressInput').value;
+            if (address) {
+                var url = 'https://www.google.com/maps/dir/?api=1&origin=' + encodeURIComponent(defaultAddress) + '&destination=' + encodeURIComponent(address);
+                window.open(url, '_blank');
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+</head>
+<body>
+    <div id="header">
+        <div>
+            <div class="logo">
+                <img src="~/Image/TikiLogo.png" alt="logo" width="50" height="50" />
+            </div>
+            <div id="searchbar">
+                <section class="search-section">
+                    <div class="search-container">
+                        <input type="text" id="search-input" placeholder="Giao nhanh 2H và đúng khung giờ " />
+                        <button id="search-button">Tìm kiếm </button>
+                    </div>
+                </section>
+            </div>
+
+        </div>
+
+        <nav>
+            <ul>
+                <li><i class="fas fa-smile"></i><a href="#">trang chủ</a></li>
+                <li><i class="fas fa-home"></i><a href="#">astra</a></li>
+                <li><i class="fas fa-crown"></i><a href="#">Tài khoản</a></li>
+                <li><i class="fas fa-cart-plus"></i><a href="#">Giỏ hàng</a></li>
+            </ul>
+        </nav>
+        <nav class="main-menu">
+            <ul>
+                <li><a href="#">khỏe đẹp</a></li>
+                <li><a href="#">nhà cửa</a></li>
+                <li><a href="#">sách</a></li>
+                <li><a href="#">thể thao</a></li>
+                <li><a href="#">trái cây</a></li>
+                <li><a href="#">thịt,trứng</a></li>
+                <li><a href="#">rau củ quả</a></li>
+                <li><a href="#">sữa,bơ phô mai</a></li>
+                <li><a href="#">gạo,mì ăn liên</a></li>
+            </ul>
+        </nav>
+    </div>
+      <div class="ShoppingCart">
+          <ul>
+              <li><i class="fas fa-house-user"></i><a href="#">Gia dụng Việt</a></li>
+          </ul>
+          
+
+              <div class="samsung">
+                  <img src="~/Image/Samsung.png" alt="Product" width="250" height="200" />
+              </div>
+              <input type="checkbox" id="id_4" name="product" value="Phone">
+              <label for="id_4">Điện thoại Samung Galaxy A54 5G(8GB/128GB)-Hàng chính hãng-Tím</label>
+              <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br />
+              <div class="samsung">
+                  <img src="~/Image/Samsung.png" alt="Product" width="250" height="200" />
+              </div>
+              <input type="checkbox" id="id_5" name="product" value="Phone">
+              <label for="id_5">Điện thoại Samung Galaxy A54 5G(8GB/128GB)-Hàng chính hãng-Tím</label>
+          
+      </div>
+      <div id="Div_UserArea2">
+          <form id="addressForm" onsubmit="event.preventDefault(); searchMap();">
+              <div style="display:flex; gap:4px;padding-inline:6px; align-items:center">
+                  <img src="/Content/Image/location.png" alt="location ico" width="20" height="20">
+                  <div style="font-size:18px;font-weight:500;white-space:nowrap"> Giao đến</div>
+                  <input type="text" id="addressInput" name="addressInput" style="text-underline-offset:auto">
+              </div>
+              </form>
+              </div>
+              <div>
+                  @RenderBody()
+              </div>
+</body>
+</html>
